@@ -15,6 +15,12 @@ addTodoBtn.addEventListener("click", () => {
     }
 })
 
+if(localStorage.getItem("theme") === "dark"){
+    switchDarkMode()
+}else{
+    switchLightMode()
+}
+
 function addTodo(){
     saveTodos(todoInput.value)
     //add todo div
@@ -87,6 +93,7 @@ function switchDarkMode(){
     todoInput.style.color = "#fff"
     todoInput.style.cursor = "text"
     modeImage.src = "sun.svg"
+    localStorage.setItem("theme", "dark")
 }
 
 function switchLightMode(){
@@ -98,4 +105,5 @@ function switchLightMode(){
     container.style.color = "#000"
     todoInput.style.color = "#000"
     modeImage.src = "moon.svg"
+    localStorage.setItem("theme", "light")
 }
