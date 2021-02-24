@@ -47,12 +47,14 @@ body, .container{
 
 .todo-input{
     padding: .5rem;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.171);
     border: 1px solid #000;
     outline: none;
     border-radius: 5px;
     font-family: poppins;
-    font-weight: 600;                     
+    font-weight: 600; 
+    cursor: pointer;
+
 }
 
 .add-btn{
@@ -108,17 +110,6 @@ img{
     
 }
 
-@keyframes fall{
-    from{
-        transform: none;
-        opacity: 1;
-    }
-    to{
-        transform: translateY(12deg);
-        opacity: 0;
-    }
-}
-
 .todo-div{
     display: flex;
     flex-direction: row;
@@ -127,4 +118,44 @@ img{
     padding: .5rem;
     margin: 1rem;
     border-radius: .3em;
+}
+
+@media all and (max-width: 500px){
+    .heading{
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .container{
+        width: 90vw;
+    }
+
+    .todo{
+        padding: .25rem;
+        width: 100%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        text-align: left;
+        display: flex;
+    }
+
+    .todo-div{
+        width: 80%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .todos{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dark-mode{
+        left: 1%;
+        top: 0;
+        bottom: 70%;
+        margin-top: 2rem;
+    }
 }
