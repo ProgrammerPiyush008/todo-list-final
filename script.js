@@ -2,6 +2,7 @@ const addTodoBtn = document.querySelector(".add-btn");
 const todoListEl = document.querySelector(".todos");
 const todoInput = document.querySelector(".todo-input");
 const trashBtn = document.querySelector(".trash-btn");
+const completedBtn = document.querySelector(".completed-btn");
 const darkModeBtn = document.querySelector(".dark-mode");
 const bgTop = document.querySelector(".bg");
 const container = document.querySelector(".container");
@@ -154,7 +155,6 @@ function renderTodos() {
     todos = [];
   } else {
     todos = JSON.parse(localStorage.getItem("todos"));
-    console.log(todos);
   }
 
   todos.forEach((todo) => {
@@ -175,18 +175,18 @@ function renderTodos() {
     const completedBtn = document.createElement("button");
     completedBtn.innerText = "✔️";
     completedBtn.classList.add("complete-btn");
-    todoEl.appendChild(completedBtn);
+    todoDiv.appendChild(completedBtn);
 
     //add trash button
     const trashBtn = document.createElement("button");
     trashBtn.innerText = "❌";
     trashBtn.classList.add("trash-btn");
-    todoEl.appendChild(trashBtn);
+    todoDiv.appendChild(trashBtn);
 
     //complete todo
     completedBtn.addEventListener("click", () => {
-      todoEl.style.textDecoration = "line-through";
-      todoEl.style.opacity = "0.5";
+      todoDiv.style.textDecoration = "line-through";
+      todoDiv.style.opacity = "0.5";
     });
 
     trashBtn.addEventListener("click", () => {
@@ -200,6 +200,7 @@ function renderTodos() {
   });
 }
 
+// DOesnt work!!!!!
 function removeLocalTodos(todo) {
   let todos = [];
 
@@ -207,11 +208,11 @@ function removeLocalTodos(todo) {
     todos = [];
   } else {
     todos = JSON.parse(localStorage.getItem("todos"));
-    console.log(todos);
   }
 
-  const index = todos.indexOf(todo.innerText);
+  const index = todo.innerText;
   todos.splice(index, 1);
-  console.log(todos);
   localStorage.setItem("todos", JSON.stringify(todos));
+
+  console.log(todos);
 }
