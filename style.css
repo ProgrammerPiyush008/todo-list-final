@@ -9,6 +9,10 @@
   transition: all 250ms;
 }
 
+*::selection {
+  background-color: rgba(204, 204, 204, 0.486);
+}
+
 .bg {
   height: 40vh;
   width: 99.5vw;
@@ -91,7 +95,6 @@ body,
   font-size: 1.25rem;
   transition: animation 250ms;
   transition: all ease-in-out 250ms;
-  background: rgba(204, 204, 204, 0.425);
   padding: 1rem;
 }
 
@@ -129,6 +132,7 @@ img {
   padding: 0.5rem;
   margin: 1rem;
   border-radius: 0.3em;
+  background: rgba(204, 204, 204, 0.425);
 }
 
 @keyframes slide {
@@ -156,8 +160,6 @@ img {
   .todo {
     padding: 0.5rem;
     width: 100%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
     text-align: left;
     display: flex;
     align-items: center;
@@ -166,7 +168,10 @@ img {
   .todo-div {
     width: 80%;
     padding: 0;
-    margin: 0;
+    margin: 1rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
   }
 
   .todos {
