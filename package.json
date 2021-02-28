@@ -5,7 +5,7 @@
   "main": "''",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "echo See your todolist at http://localhost:8080 && node-http-server port=8080 root=./"
+    "start": "npm i && echo See your todolist at http://localhost:8080 && node-http-server port=8080 root=./"
   },
   "repository": {
     "type": "git",
