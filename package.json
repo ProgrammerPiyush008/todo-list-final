@@ -1,0 +1,23 @@
+{
+  "name": "todo-list-final",
+  "version": "0.0.0",
+  "description": "This is a ToDo list. Made in **JavaScript**",
+  "main": "''",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "echo See your todolist at http://localhost:8080 && node-http-server port=8080 root=./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RIAEvangelist/todo-list-final.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RIAEvangelist/todo-list-final/issues"
+  },
+  "homepage": "https://github.com/RIAEvangelist/todo-list-final#readme",
+  "devDependencies": {
+    "node-http-server": "^8.1.3"
+  }
+}
