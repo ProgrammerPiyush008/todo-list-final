@@ -23,8 +23,8 @@ addTodoBtn.addEventListener("click", () => {
   }
 });
 
-document.addEventListener("keydown", (keyCode) => {
-  if (keyCode === 13) {
+document.addEventListener("keydown", (e) => {
+  if (e.which === 13) {
     addTodo();
   }
 });
@@ -36,8 +36,6 @@ if (localStorage.getItem("theme") === "dark") {
 }
 
 function addTodo() {
-  saveTodos(todoInput.value);
-
   //add todo div
   const todoDiv = document.createElement("div");
   todoDiv.classList.add("todo-div");
@@ -85,21 +83,6 @@ function addTodo() {
 
 //functions
 
-//adds to localStorage
-function saveTodos(todo) {
-  let todos = [];
-
-  if (localStorage.getItem("todos") === null) {
-    todos = [];
-  } else {
-    todos = JSON.parse(localStorage.getItem("todos"));
-  }
-
-  todos.push(todo);
-
-  localStorage.setItem("todos", JSON.stringify(todos));
-}
-
 //to Handle theme
 
 function handleThemeChange() {
@@ -113,7 +96,7 @@ function handleThemeChange() {
   switchLightMode();
 }
 
-//DARK MODE
+//DARKMODE
 
 function switchDarkMode() {
   bgTop.classList.add("bg-dark");
@@ -202,6 +185,7 @@ function renderTodos() {
 
 // DOesnt work!!!!!
 function removeLocalTodos(todo) {
+  //EMPTY?
   let todos = [];
 
   if (localStorage.getItem("todos") === null) {
@@ -211,8 +195,8 @@ function removeLocalTodos(todo) {
   }
 
   const index = todo.innerText;
-  todos.splice(index, 1);
-  localStorage.setItem("todos", JSON.stringify(todos));
+  console.log(index);
 
+  todos.splice(todos.indexOf(index), 1);
   console.log(todos);
 }
